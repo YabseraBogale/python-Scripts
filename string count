@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug  9 17:04:42 2022
+Type a code inside the for loop so that counter variable named c is 
+increased by one each time loop iterates. Can you guess how many times it will add 1?.
+@author: yabsera
+"""
+
+str="Civilization"
+
+c=0
+for i in str:
+#Type your answer here.    
+    c+=1
+
+    print(c)
