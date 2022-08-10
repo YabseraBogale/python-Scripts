@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 10 16:51:52 2022
+What color is the violet?
+@author: yabsera
+"""
+
+nested_lst = [{"orange": "orange"}, {"rose": "red"}, {"violet": "blue"}]
+#Type your code here.
+
+ans_1=nested_lst[2]["violet"]
+
+
+print(ans_1)
