@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 10 17:09:53 2022
+This time use the sorted() function
+to sort the list in ascending order with lambda.
+@author: yabsera
+"""
+
+lst=[100, 10, 10000, 1, 9, 999, 99]
+#Type your answer here.
+
+lst.sort(key=lambda x:x/10)
+
+
+print(lst)
+
