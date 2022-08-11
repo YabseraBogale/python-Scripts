@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 11 18:25:15 2022
+creating length of words by map
+@author: yabsera
+"""
+
+#Type your answer here.
+
+lst1=["Alpine", "Avalanche", "Powder", "Snowflake", "Summit"]
+
+lst2=list(map(lambda x:len(x),lst1))
+
+print(lst2)
+
