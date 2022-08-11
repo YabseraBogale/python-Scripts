@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 11 18:04:18 2022
+Remove "broccoli" from the list using .pop and .index methods.
+@author: yabsera
+"""
+
+lst=["milk", "banana", "eggs", "bread", "broccoli", "lemons"]
+
+#Type your code here.
+
+
+item=lst.pop(4)
+
+
+print(lst, item)
