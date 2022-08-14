@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug 14 11:53:14 2022
+
+@author: yabsera
+"""
+
+from requests import get
+import json
+from pprint import pprint
+url='https://abusiveexperiencereport.googleapis.com/$discovery/rest?version=v1'
+station=get(url).json()['parameters']
+pprint(station)
