@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 15 15:52:10 2022
+
+@author: yabsera
+"""
+import lxml
+from requests import get
+from bs4 import BeautifulSoup
+import json
+import re
+from pprint import pprint
+url='https://www.reddit.com/r/cpp_questions/'
+reddit=get(url)
+
+    
