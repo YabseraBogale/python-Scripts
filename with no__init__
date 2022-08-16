@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 16 13:34:53 2022
+We have seen multiple examples of class usage in Python. Let's build something from ground up.
+
+In this exercise create a class named myfunc and inside it place a very simple function named "fifth" which takes x and returns fifth power of x. No __init__ or class attributes needed.
+
+Finally call your function with number 5 and assign it to variable ans.
+@author: yabsera
+"""
+
+#Type your code here.
+class myfunc:
+    def fifth(x):
+        return pow(5,x)
+
+ 
+
+
+ans=myfunc.fifth(5)
+
+print(ans)
+

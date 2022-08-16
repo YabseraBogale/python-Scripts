@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 16 13:20:22 2022
+Let's try something else.
+
+Try building a simple class from the ground up. 
+An instance is already created for you and instance attributes are included inside the print. 
+Take those clues and try to reverse engineer the class.
+@author: yabsera
+"""
+
+#Type your code here.
+class Nobel:
+    name=None
+    year=0
+    def __init__(self,category,year,winner):
+        self.category=category
+        self.year=year
+        self.winner=winner
+
+
+
+
+np2005=Nobel("Peace", 2005, "Muhammad Yunus")
+print(np2005.category, np2005.year, np2005.winner)
+
+
