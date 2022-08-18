@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 18 19:19:59 2022
+
+@author: yabsera
+"""
+from requests import get
+import json
+from pprint import pprint
+
+url='https://randomuser.me/api'
+Name=get(url).json()["results"]
+for x in Name:
+   firstName=x["name"]["first"]
+   lastName=x["name"]["last"]
+print("Name is ",firstName,lastName)      
