@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 17 09:09:02 2022
+
+@author: yabsera
+"""
+
+class book:
+    name=None
+    def bookname(name):
+        name=name
+        return name
+Name=input('Enter Name of book: ')
+BookName=book.bookname(Name)
+print(type(BookName))
