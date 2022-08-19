@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 19 18:03:58 2022
+
+@author: yabsera
+"""
+
+from requests import get
+url ="https://appsgeyser.com/blog/how-to-make-money-online-with-telegram-channel/"
+webPage=get(url)
+allcon=webPage.text
+page=allcon
+ele2=allcon.split(' ')
+count=0
+for p in page:
+    pre=page.index("<")
+    nex=page.index(">")
+    po=page.index("p")
+    if pre<po and po<nex:
+        count+=1
+print(count)

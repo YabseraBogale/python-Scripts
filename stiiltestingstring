@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 19 18:46:12 2022
+
+@author: yabsera
+"""
+
+string=" For  now, it’s the only popular messenger that  q    guarantees the safety"
+line=string.split(' ')
+ele=list()
+count=0
+p=string.index("q")
+n=string.index("t")
+po=string.index("e")
+
+print(p,po,n)
+    
+  
+           
+print(count)

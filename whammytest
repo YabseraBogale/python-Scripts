@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 19 12:27:47 2022
+
+@author: yabsera
+"""
+import pygame, sys
+from pygame.locals import *
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((400, 400))
+###########################################
+###set shape
+myred=(255,0,0)
+mygreen=(0,255,0)
+myblue=(0,0,255)
+##############################################
+pygame.draw.rect(myblue,myred,(60,60,120,60))
+pygame.display.set_caption('Hello World!')
+while True: # main game loop
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+    pygame.display.update()

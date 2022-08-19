@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 19 17:51:41 2022
+
+    
+        
+@author: yabsera
+"""
+
+string=" For  now, it’s the only popular messenger that      guarantees the safety"
+line=string.split(' ')
+ele=list()
+count=0
+for sp in line:
+   if (sp.find("e")==True):
+       print(sp)
+       count+=1
+print(count)    
