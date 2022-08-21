@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug 21 11:10:53 2022
+
+@author: yabsera
+"""
+from pprint import pprint
+from requests import get
+utl=input("Enter website Url: ")
+tosearch=input("Enter word to serarch in website: ")
+twt=get(utl)
+wordtwt=twt.text.split(' ')
+count=0
+for word in wordtwt:
+    length=len(word)-1
+    if word.find(tosearch,0,length):
+      count+=1
+print(count,"this many have been called")

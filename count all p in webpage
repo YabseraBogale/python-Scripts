@@ -11,12 +11,16 @@ url ="https://appsgeyser.com/blog/how-to-make-money-online-with-telegram-channel
 webPage=get(url)
 allcon=webPage.text
 page=allcon
-ele2=allcon.split(' ')
+print(len(page))
 count=0
-for p in page:
-    pre=page.index("<")
-    nex=page.index(">")
-    po=page.index("p")
-    if pre<po and po<nex:
-        count+=1
+num=0
+po=0
+nex=0
+while(num<len(page)):
+    if(page[num]=="<"):
+        po=num+1
+        if(po=="p"):
+            count+=1
+    num+=1
+   
 print(count)
