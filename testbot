@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Aug 23 14:25:00 2022
+
+@author: yabsera
+"""
+from instabot import Bot
+bot = Bot()
+bot.login(username="test",
+          password="botttttttt123")
+ 
+# Follow
+ 
+# To follow more person.
+##list_of_user = ["user_id1", "user_id2", "user_id3", "...."]
+##bot.follow_users(list_of_user)
