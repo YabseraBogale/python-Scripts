@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug 27 16:19:37 2022
+
+@author: yabsera
+"""
+
+from bs4 import BeautifulSoup
+from requests import get
+import json
+from pprint import pprint
+url="https://edition.cnn.com/africa"
+cnn_af=get(url)
+cleaing=BeautifulSoup(cnn_af.content,'html.parser')
+print(cleaing.find("span",class_="cd__headline-text vid-left-enabled").text)

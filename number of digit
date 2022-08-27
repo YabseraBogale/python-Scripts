@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 26 12:35:06 2022
+
+@author: yabsera
+"""
+
+def digit(num):
+    if type(num)==str:
+        return "Enter number"
+    di=str(num)
+    if di[0]=="-":
+        return len(di)-1
+    return len(di)
+print(digit(10))
