@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 29 12:44:55 2022
+
+@author: yabsera
+"""
+import re
+def string(arr):
+    newarr=list()
+    for i in arr:
+        if re.match("[0-9]",i):
+            newarr.append(i)
+    return newarr
+print(string(["1a","b"]))
