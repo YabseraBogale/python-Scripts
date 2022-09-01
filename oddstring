@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep  1 18:48:38 2022
+Given a string, reverse all the words which have odd length.
+The even length words are not changed.
+@author: yabsera
+"""
+
+def oddstring(str):
+    if(len(str)%2==0):
+        return str
+    newstr=""
+    i=len(str)-1
+    while i>=0:
+        newstr+=str[i]
+        i-=1
+    return newstr
+print(oddstring("five"))
+print(oddstring("fie"))

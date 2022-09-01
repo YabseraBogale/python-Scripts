@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep  1 18:18:16 2022
+
+@author: yabsera
+"""
+
+def dosawp(str,chr1,chr2):
+    i=0
+    newstr=""
+    while i<len(str):
+        if(str[i]==chr1):
+            newstr+=chr2
+            i+=1
+        elif(str[i]==chr2):
+            newstr+=chr1
+            i+=1
+        else:
+            newstr+=str[i]
+            i+=1 
+    return newstr
+print(dosawp("aabb","a","b"))
