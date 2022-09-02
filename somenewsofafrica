@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep  1 16:15:35 2022
+
+@author: yabsera
+"""
+from requests import get
+from bs4 import BeautifulSoup
+from pprint import pprint
+def string(str):
+    nstr=str.split()
+    newstr=""
+    for i in nstr:
+        newstr+=i
+        if(i[len(i)-1]=="."):
+            newstr+="\n"
+        elif(i.find(".Published")!=-1):
+            newstr+="\n"
+        else:
+            newstr+=" "
+    return newstr
+def news(str1,str2,str3,str4,str5):
+    fromnews=""
+    for line in str1:
+        fromnews+=line
+    for line in str2:
+        fromnews+=line
+    for line in str3:
+        fromnews+=line
+    for line in str4:
+        fromnews+=line
+    for line in str5:
+        fromnews+=line
+    return fromnews
+cnnurl="https://edition.cnn.com/africa"
+foxurl="https://www.foxnews.com/category/world/world-regions/africa"
+alarurl="https://english.alarabiya.net/tools/search?query=africa+news"
+alzaurl="https://www.aljazeera.com/africa/"
+eurourl="https://www.euronews.com/search?query=africanews"
+cnn=get(cnnurl).content
+fox=get(foxurl).content
+alar=get(alarurl).content
+alza=get(alzaurl).content
+eur=get(eurourl).content
+fox=BeautifulSoup(fox,"html.parser")
+fox=fox.find("div",class_="content article-list").text
+cnn=BeautifulSoup(cnn,"html.parser")
+cnn=cnn.find("span", class_="cd__headline-text vid-left-enabled").text
+alar=BeautifulSoup(alar,"html.parser")
+alar=alar.find("ul",class_="latest_list").text
+alza=BeautifulSoup(alza,"html.parser")
+alza=alza.find("div",class_="l-col l-col--8").text
+euro=BeautifulSoup(eur,"html.parser")
+euro=euro.find("div",class_="o-block-listing__articles").text
+print("from euronews","\n")
+print(string(euro))
+print("\n")
+print("from aljazeera","\n")
+print(string(alza))
+print("\n")
+print("from fox","\n")
+print(string(fox))
+print("\n")
+print("from cnn","\n")
+print(string(cnn))
+print("\n")
+print("from alarabiya","\n")
+print(string(alar))
+print("\n")
+newsfile=open("./newsfile","w")
+euro=string(euro)
+cnn=string(cnn)
+fox=string(fox)
+alza=string(alza)
+alar=string(alar)
+newsfile.write(news(cnn,fox,euro,alar,alza))
+newsfile.close()
+#

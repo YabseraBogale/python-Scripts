@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep  2 16:29:27 2022
+
+@author: yabsera
+"""
+from requests import get
+from bs4 import BeautifulSoup
+from pprint import pprint
+alzaurl="https://www.aljazeera.com/africa/"
+alza=get(alzaurl).content
+alza=BeautifulSoup(alza,"html.parser")
+alza=alza.find("div",class_="l-col l-col--8").text
+print(alza.split())

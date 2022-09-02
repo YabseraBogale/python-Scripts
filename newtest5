@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep  2 17:14:10 2022
+
+@author: yabsera
+"""
+from requests import get
+from bs4 import BeautifulSoup
+eurourl="https://www.euronews.com/search?query=africanews"
+eur=get(eurourl).content
+euro=BeautifulSoup(eur,"html.parser")
+euro=euro.find("div",class_="o-block-listing__articles").text
+print(euro)
