@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep  5 17:57:20 2022
+
+@author: yabsera
+"""
+
+"""
+Write a function that takes coordinates of two points on a 
+two-dimensional plane and returns the length of the line segment connecting those two points.
+"""
+
+import math
+def line(dot1,dot2):
+    linex=dot2[0]-dot1[0]##x
+    liney=dot2[1]-dot1[1]##y
+    if(linex<0):
+        linex=line*-1
+    if(liney<0):
+        liney=liney*-1
+    linex=pow(linex,2)
+    liney=pow(liney,2)
+    segemnt=linex+liney
+    return round(math.sqrt(segemnt),2)
+print(line([15, 7], [22, 11]))
+    
