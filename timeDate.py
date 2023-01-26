@@ -63,6 +63,8 @@ def Aanlizing():
 						if i not in lst_of_thesame:
 							lst_of_thesame[i]=Date.count(i)
 				numberofpeople=the_same_Dob
+				if numberofpeople==0:
+					numberofpeople="None"
 				the_same_Dob=round((the_same_Dob/len(Date))*100,2)
 				print("\n\t","Geneated Dates")
 				print(printShow(Date))
