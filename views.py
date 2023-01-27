@@ -1,5 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-def index(request):
-	return HttpResponse("Hello world for polls index")
+from flask import render_template
+
+
+
+def home_page():
+	
+	return render_template("home.html")
+	
+def movies_page():
+	
+	return render_template("Movie.html")
