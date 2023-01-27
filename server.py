@@ -1,33 +1,18 @@
-from datetime import datetime
 from flask import Flask
-from flask import render_template
-from requests import get
-import json
 
-app=Flask(__name__)
-
-@app.route("/")
-def CatsCollection():
-	url="https://catfact.ninja/fact"
-	fact=get(url).json()
-	return render_template("CatsCollection.html",Fact=fact['fact'])
-
-@app.route("/Cats")
-def Cats():
-	
-	return render_template("Cats.html")
+import views
 
 
-	
-	
-@app.route('/test')
-def testing():
-	url="https://catfact.ninja/fact"
-	fact=get(url).json()
-	return fact["fact"]
-	
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object("setting")
+
+    app.add_url_rule("/", view_func=views.home_page)
+    app.add_url_rule("/movies", view_func=views.movies_page)
+    return app
 
 
-
-if __name__=="__main__":
-	app.run(debug=True)
+if __name__ == "__main__":
+    app = create_app()
+    port = app.config.get("PORT", 5000)
+    app.run(host="0.0.0.0", port=port)
