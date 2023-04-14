@@ -25,8 +25,19 @@ data=driver.find_elements(By.CLASS_NAME,"History_tableLine__3dtlF")
 # function=data[0].find_element(By.CLASS_NAME,"History_interAddressExplain__2VXp7").find_element(By.CLASS_NAME,"History_ellipsis__rfBNq").text
 #done
 # protocol=data[0].find_element(By.CLASS_NAME,"History_greyText__KIi2L").text
-sign=data[0].find_element(By.XPATH,'//*[@id="root"]/div/div[2]/div[1]/div[3]/div/div[2]/div[2]/div[3]/div/div[1]/div[2]/span/span[1]').text
-a=data[0].find_element(By.CLASS_NAME,"History_tokenSymbol__2LgpT").text
-amount=[sign,removeStr(a)]
-print(amount)
+# done 
+# sign=data[0].find_element(By.XPATH,'//*[@id="root"]/div/div[2]/div[1]/div[3]/div/div[2]/div[2]/div[3]/div/div[1]/div[2]/span/span[1]').text
+#done
+# a=data[0].find_element(By.CLASS_NAME,"History_tokenSymbol__2LgpT").text
+# done
+# amount=sign+removeStr(a)[0]
+# done
+# symbole=removeStr(a)[1]
+# done
+# amount_usd=data[0].find_element(By.XPATH,'//*[@id="root"]/div/div[2]/div[1]/div[3]/div/div[2]/div[2]/div[3]/div/div[1]/div[2]/span/span[3]')
+# done
+# amount_usd=amount_usd.text.replace('(',"").replace(')',"").replace("$","")
+# token 1 is finshed
+Address=data[0].find_element(By.XPATH,'//*[@id="root"]/div/div[2]/div[1]/div[3]/div/div[2]/div[2]/div[3]/div/div[2]/div[2]').get_attribute("data-id")
+print(Address)
 driver.quit()
