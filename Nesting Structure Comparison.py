@@ -19,11 +19,12 @@ same_structure_as([ [ [ ], [ ] ] ], [ [ 1, 1 ] ] )
 
 """
 
-
-
 def same_structure_as(original,other):
-            
-    if len(original)!=len(other):
+    
+    if  type(original)!=type(other):
+        return False
+    
+    elif len(original)!=len(other):
         return False
     elif len(original)==len(other):
         i=0
