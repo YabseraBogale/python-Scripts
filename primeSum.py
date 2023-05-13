@@ -19,4 +19,4 @@ def primeSum(limit):
         
     return sum
 
-print(primeSum(2000000))
+print(primeSum(10))
