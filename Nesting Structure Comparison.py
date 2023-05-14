@@ -19,9 +19,17 @@ same_structure_as([ [ [ ], [ ] ] ], [ [ 1, 1 ] ] )
 
 """
 
+def checker(lst1,lst2):
+    lst1=str(lst1)
+    lst2=str(lst2)
+    if len(lst2)==len(lst1):
+        return True
+    return False
+
 def same_structure_as(original,other):
     
     if  type(original)!=type(other):
+        
         return False
     
     elif len(original)!=len(other):
@@ -30,14 +38,16 @@ def same_structure_as(original,other):
         i=0
         while i<len(other):
            if(type(other[i])!=type(original[i])):
+                test=checker(other,original)
+                print("here")
+                if test==True:
+                    return test
                 return False
-           if type(other[i])==list or type(original[i])==list:
+           elif type(other[i])==list or type(original[i])==list:
                 if len(other[i])!=len(original[i]):
-                    return False
-               
-                    
-                    
+                    return False                     
            i+=1
+   
     return True
 
 print(same_structure_as([1,[1,1]],[2,[2,2]]))
