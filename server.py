@@ -1,18 +1,17 @@
-from flask import Flask
+import socket
 
-import views
+server=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(("localhost",9999))
+server.listen()
 
+client, addr= server.accept()
 
-def create_app():
-    app = Flask(__name__)
-    app.config.from_object("setting")
+done=False
 
-    app.add_url_rule("/", view_func=views.home_page)
-    app.add_url_rule("/movies", view_func=views.movies_page)
-    return app
-
-
-if __name__ == "__main__":
-    app = create_app()
-    port = app.config.get("PORT", 5000)
-    app.run(host="0.0.0.0", port=port)
+while not done:
+    msg=client.recv(1024).decode('utf-8')
+    if msg=="quit":
+        done=True
+    else:
+        print(msg)
+    client.send(input("Text: ").encode('utf-8'))
