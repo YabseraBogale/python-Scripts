@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    Enter Number <input type="number" name="" id="number">
+    <button>submit</button>
+    <p id="Answer"></p>
+
+    <script>
+      
+        function prime(number){
+            let list_prime=[]
+               for(let i=2;i<number;i++){
+        	    let yes_no=true
+		        for(let j=2;j<i;j++)
+		        {
+			
+			    if(i%j==0){
+				    yes_no=false
+			    }
+		    }
+		    if(yes_no==true){
+			    list_prime.push(i)
+		    }
+	    }   
+        return list_prime
+    }
+
+    function primeFormate(listofFactors){
+
+        let dict={}
+        for (let i=0;i<listofFactors.length;i++){
+            if(listofFactors[i] in dict){
+                dict[listofFactors[i]]+=1
+            }
+            else{
+                dict[listofFactors[i]]=1
+            }
+        }
+
+        return dict
+
+    }
+
+    function primeFactorization(number){
+        let list_prime=prime(number)
+        let factors=[]
+        let num=number
+        let i=0
+        while(num!=1){
+            while(i<list_prime.length){
+                if(num%list_prime[i]==0){
+                    factors.push(list_prime[i])
+                    num=num/list_prime[i]
+                }
+                i+=1
+            }
+            i=0
+        }
+
+        return factors
+    } 
+    function logical(number){
+        let numbers=primeFormate(primeFactorization(number))
+        let stringFactor=""
+        for(let i in numbers){
+            stringFactor+="("+i.toString()+"^"+numbers[i]+")"+"*"
+        }
+        let stringnumber=""
+        if (stringFactor[stringFactor.length-1]=="*"){
+            for(let i=0;i<=stringFactor.length-2;i++){
+                stringnumber+=stringFactor[i]
+           }
+        }
+        
+        return stringnumber
+    }
+    //console.log(logical(45))
+    
+</script>
+</body>
+</html>
